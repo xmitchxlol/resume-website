@@ -1,99 +1,173 @@
-/* Reset some defaults */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #333;
-}
-
-/* Body styling */
+/* ====== Base / Reset ====== */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
 body {
-  background-color: #f4f4f9;
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
   line-height: 1.6;
-  padding: 20px;
+  color: #e7e7e7;
+  background: radial-gradient(1200px 600px at 20% 0%, rgba(0,255,140,0.10), transparent 55%),
+              radial-gradient(900px 500px at 90% 10%, rgba(0,160,255,0.10), transparent 50%),
+              #070a0f;
 }
 
-/* Header */
-header {
-  text-align: center;
-  padding: 40px 20px;
-  background-color: #222;
-  color: #fff;
-  border-radius: 10px;
-  margin-bottom: 30px;
+/* ====== Layout ====== */
+.container {
+  width: min(980px, 92%);
+  margin: 0 auto;
 }
 
-header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
+/* ====== Header ====== */
+.site-header {
+  position: relative;
+  padding: 56px 0 28px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  background: linear-gradient(180deg, rgba(0,255,140,0.06), transparent);
 }
 
-header .subtitle {
-  font-size: 1.2rem;
-  font-weight: 400;
-  color: #ccc;
+.site-header h1 {
+  margin: 0 0 6px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: 0.2px;
 }
 
-/* Profile pic optional */
-/*
-.profile-pic {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  margin-top: 20px;
-  border: 3px solid #fff;
-}
-*/
-
-/* Sections */
-main section {
-  background: #fff;
-  padding: 20px 25px;
-  margin-bottom: 20px;
-  border-radius: 8px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+.subtitle {
+  margin: 0;
+  color: rgba(231,231,231,0.78);
+  font-size: 1.05rem;
 }
 
-main section h2 {
-  color: #1e90ff;
-  margin-bottom: 10px;
-  border-bottom: 2px solid #1e90ff;
-  display: inline-block;
-  padding-bottom: 5px;
+/* ====== Header link row ====== */
+.links {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  color: rgba(231,231,231,0.75);
 }
 
-ul {
-  list-style-type: disc;
-  padding-left: 20px;
-}
-
-a {
-  color: #1e90ff;
+.links a {
+  color: rgba(0,255,140,0.95);
   text-decoration: none;
+  font-weight: 600;
 }
 
-a:hover {
+.links a:hover {
   text-decoration: underline;
 }
 
-/* Footer */
-footer {
+.dot { opacity: 0.55; }
+
+/* ====== Profile block ====== */
+.profile {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 16px;
+  align-items: center;
+}
+
+.profile img {
+  width: 92px;
+  height: 92px;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 1px solid rgba(0,255,140,0.45);
+  box-shadow: 0 0 0 6px rgba(0,255,140,0.06), 0 10px 30px rgba(0,0,0,0.45);
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  color: rgba(231,231,231,0.88);
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(6px);
+}
+
+.badge .pill {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(0,255,140,0.9);
+  box-shadow: 0 0 18px rgba(0,255,140,0.35);
+}
+
+/* ====== Main content ====== */
+main {
+  padding: 28px 0 60px;
+}
+
+section {
+  margin: 18px 0;
+  padding: 18px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.02);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+h2 {
+  margin: 0 0 10px;
+  font-size: 1.25rem;
+  letter-spacing: 0.2px;
+  color: rgba(231,231,231,0.95);
+}
+
+p { margin: 10px 0; color: rgba(231,231,231,0.82); }
+
+ul {
+  margin: 10px 0 0 18px;
+  padding: 0;
+  color: rgba(231,231,231,0.82);
+}
+
+li { margin: 6px 0; }
+
+/* ====== Experience blocks ====== */
+.role {
+  margin-top: 14px;
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(0,0,0,0.18);
+}
+
+.role h3 {
+  margin: 0 0 4px;
+  font-size: 1.05rem;
+  color: rgba(0,255,140,0.92);
+}
+
+.meta {
+  margin: 0 0 10px;
+  font-size: 0.95rem;
+  color: rgba(231,231,231,0.68);
+}
+
+/* ====== Footer ====== */
+.site-footer {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 18px 0;
+  color: rgba(231,231,231,0.55);
   text-align: center;
-  padding: 20px;
-  color: #777;
-  font-size: 0.9rem;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 2rem;
-  }
-  main section {
-    padding: 15px;
-  }
+/* ====== Small screens ====== */
+@media (max-width: 520px) {
+  .profile { grid-template-columns: 72px 1fr; }
+  .profile img { width: 72px; height: 72px; }
+  section { padding: 14px; }
 }
-
-
-
