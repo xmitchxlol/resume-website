@@ -1,44 +1,74 @@
 /* ====== Base / Reset ====== */
-* { box-sizing: border-box; }
-html, body { height: 100%; }
-body {
+:root{
+  --bg: #070a0f;
+  --text: #e7e7e7;
+  --muted: rgba(231,231,231,0.78);
+
+  --accent: rgba(0,255,140,0.95);
+  --accent2: rgba(0,160,255,0.92);
+  --accentSoft: rgba(0,255,140,0.10);
+
+  --card: rgba(255,255,255,0.02);
+  --card2: rgba(0,0,0,0.18);
+
+  --border: rgba(255,255,255,0.08);
+  --borderStrong: rgba(0,255,140,0.18);
+
+  --shadow: 0 12px 30px rgba(0,0,0,0.25);
+  --shadowStrong: 0 18px 45px rgba(0,0,0,0.45);
+
+  --radius: 16px;
+  --radius2: 14px;
+}
+
+*{ box-sizing: border-box; }
+html, body{ height: 100%; }
+html{ scroll-behavior: smooth; }
+
+body{
   margin: 0;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
   line-height: 1.6;
-  color: #e7e7e7;
-  background: radial-gradient(1200px 600px at 20% 0%, rgba(0,255,140,0.10), transparent 55%),
-              radial-gradient(900px 500px at 90% 10%, rgba(0,160,255,0.10), transparent 50%),
-              #070a0f;
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  background:
+    radial-gradient(1200px 600px at 20% 0%, rgba(0,255,140,0.10), transparent 55%),
+    radial-gradient(900px 500px at 90% 10%, rgba(0,160,255,0.10), transparent 50%),
+    var(--bg);
 }
 
+img{ max-width: 100%; display: block; }
+p{ margin: 10px 0; color: rgba(231,231,231,0.82); }
+
 /* ====== Layout ====== */
-.container {
+.container{
   width: min(980px, 92%);
   margin: 0 auto;
 }
 
 /* ====== Header ====== */
-.site-header {
+.site-header{
   position: relative;
   padding: 56px 0 28px;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid var(--border);
   background: linear-gradient(180deg, rgba(0,255,140,0.06), transparent);
 }
 
-.site-header h1 {
+.site-header h1{
   margin: 0 0 6px;
   font-size: clamp(2rem, 4vw, 3rem);
   letter-spacing: 0.2px;
 }
 
-.subtitle {
+.subtitle{
   margin: 0;
-  color: rgba(231,231,231,0.78);
+  color: var(--muted);
   font-size: 1.05rem;
 }
 
 /* ====== Header link row ====== */
-.links {
+.links{
   margin-top: 14px;
   display: flex;
   flex-wrap: wrap;
@@ -47,20 +77,32 @@ body {
   color: rgba(231,231,231,0.75);
 }
 
-.links a {
-  color: rgba(0,255,140,0.95);
+.links a{
+  color: var(--accent);
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
+  position: relative;
+  transition: transform 160ms ease, opacity 160ms ease, text-decoration-color 160ms ease;
 }
 
-.links a:hover {
+.links a:hover{
+  transform: translateY(-1px);
   text-decoration: underline;
+  text-decoration-color: rgba(0,255,140,0.6);
 }
 
-.dot { opacity: 0.55; }
+.dot{ opacity: 0.55; }
+
+/* Better focus outlines (keyboard nav) */
+a:focus-visible,
+button:focus-visible{
+  outline: 2px solid rgba(0,255,140,0.75);
+  outline-offset: 3px;
+  border-radius: 10px;
+}
 
 /* ====== Profile block ====== */
-.profile {
+.profile{
   margin-top: 18px;
   display: grid;
   grid-template-columns: 92px 1fr;
@@ -68,7 +110,7 @@ body {
   align-items: center;
 }
 
-.profile img {
+.profile img{
   width: 92px;
   height: 92px;
   border-radius: 999px;
@@ -77,14 +119,14 @@ body {
   box-shadow: 0 0 0 6px rgba(0,255,140,0.06), 0 10px 30px rgba(0,0,0,0.45);
 }
 
-.badges {
+.badges{
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   margin-top: 10px;
 }
 
-.badge {
+.badge{
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -95,9 +137,10 @@ body {
   border: 1px solid rgba(255,255,255,0.10);
   background: rgba(255,255,255,0.03);
   backdrop-filter: blur(6px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
 
-.badge .pill {
+.badge .pill{
   width: 8px;
   height: 8px;
   border-radius: 50%;
@@ -106,68 +149,88 @@ body {
 }
 
 /* ====== Main content ====== */
-main {
+main{
   padding: 28px 0 60px;
 }
 
-section {
+section{
   margin: 18px 0;
   padding: 18px;
-  border-radius: 16px;
-  border: 1px solid rgba(255,255,255,0.08);
-  background: rgba(255,255,255,0.02);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--card);
+  box-shadow: var(--shadow);
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
 }
 
-h2 {
+section:hover{
+  transform: translateY(-2px);
+  border-color: var(--borderStrong);
+  background: rgba(255,255,255,0.03);
+  box-shadow: var(--shadowStrong);
+}
+
+h2{
   margin: 0 0 10px;
   font-size: 1.25rem;
   letter-spacing: 0.2px;
   color: rgba(231,231,231,0.95);
 }
 
-p { margin: 10px 0; color: rgba(231,231,231,0.82); }
-
-ul {
+/* Lists */
+ul{
   margin: 10px 0 0 18px;
   padding: 0;
   color: rgba(231,231,231,0.82);
 }
 
-li { margin: 6px 0; }
+li{ margin: 6px 0; }
 
 /* ====== Experience blocks ====== */
-.role {
+.role{
   margin-top: 14px;
   padding: 14px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.08);
-  background: rgba(0,0,0,0.18);
+  border-radius: var(--radius2);
+  border: 1px solid var(--border);
+  background: var(--card2);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  transition: transform 180ms ease, border-color 180ms ease;
 }
 
-.role h3 {
+.role:hover{
+  transform: translateY(-1px);
+  border-color: rgba(0,255,140,0.16);
+}
+
+.role h3{
   margin: 0 0 4px;
   font-size: 1.05rem;
-  color: rgba(0,255,140,0.92);
+  color: var(--accent);
 }
 
-.meta {
+.meta{
   margin: 0 0 10px;
   font-size: 0.95rem;
   color: rgba(231,231,231,0.68);
 }
 
 /* ====== Footer ====== */
-.site-footer {
-  border-top: 1px solid rgba(255,255,255,0.08);
+.site-footer{
+  border-top: 1px solid var(--border);
   padding: 18px 0;
   color: rgba(231,231,231,0.55);
   text-align: center;
 }
 
 /* ====== Small screens ====== */
-@media (max-width: 520px) {
-  .profile { grid-template-columns: 72px 1fr; }
-  .profile img { width: 72px; height: 72px; }
-  section { padding: 14px; }
+@media (max-width: 520px){
+  .profile{ grid-template-columns: 72px 1fr; }
+  .profile img{ width: 72px; height: 72px; }
+  section{ padding: 14px; }
+}
+
+/* ====== Reduced Motion ====== */
+@media (prefers-reduced-motion: reduce){
+  *{ transition: none !important; }
+  html{ scroll-behavior: auto; }
 }
