@@ -245,4 +245,17 @@ li{ margin: 6px 0; }
 @media (prefers-reduced-motion: reduce){
   *{ transition: none !important; }
   html{ scroll-behavior: auto; }
+
+  /* ====== FORCE-KILL ANY OLD GREEN BACKGROUND ====== */
+html, body{
+  background: #070a0f !important;
 }
+
+body{
+  background:
+    radial-gradient(1200px 600px at 20% 0%, rgba(96,165,250,0.10), transparent 55%),
+    radial-gradient(900px 500px at 90% 10%, rgba(94,234,212,0.08), transparent 50%),
+    #070a0f !important;
+}
+
+
