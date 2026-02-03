@@ -1,28 +1,24 @@
 /* ====== Base / Reset ====== */
 :root{
   --bg: #070a0f;
-
   --text: #e7e7e7;
   --muted: rgba(231,231,231,0.78);
 
-  /* Accent (NO GREEN) */
-  --accent: #60a5fa;                 /* soft blue */
-  --accent2: #5eead4;                /* soft teal */
-  --accentSoft: rgba(96,165,250,0.12);
+  /* ACCENTS */
+  --accent: #22c55e;              /* green (text only) */
+  --accentSoft: rgba(34,197,94,0.22);
+  --link: #60a5fa;                /* blue links so it’s not all green */
 
-  /* Surfaces */
+  /* SURFACES */
   --card: rgba(255,255,255,0.02);
   --card2: rgba(0,0,0,0.22);
 
-  /* Borders */
+  /* BORDERS / SHADOWS */
   --border: rgba(255,255,255,0.08);
   --borderStrong: rgba(96,165,250,0.22);
-
-  /* Shadows */
   --shadow: 0 12px 30px rgba(0,0,0,0.25);
   --shadowStrong: 0 18px 45px rgba(0,0,0,0.45);
 
-  /* Radius */
   --radius: 16px;
   --radius2: 14px;
 }
@@ -39,12 +35,15 @@ body{
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 
-  /* Background (NO GREEN) */
+  /* BACKGROUND: NO GREEN */
   background:
     radial-gradient(1200px 600px at 20% 0%, rgba(96,165,250,0.10), transparent 55%),
-    radial-gradient(900px 500px at 90% 10%, rgba(94,234,212,0.08), transparent 50%),
+    radial-gradient(900px 500px at 90% 10%, rgba(148,163,184,0.06), transparent 50%),
     var(--bg);
 }
+
+/* Safety: prevent any old green from other layers */
+html{ background: var(--bg); }
 
 img{ max-width: 100%; display: block; }
 p{ margin: 10px 0; color: rgba(231,231,231,0.82); }
@@ -67,6 +66,10 @@ p{ margin: 10px 0; color: rgba(231,231,231,0.82); }
   margin: 0 0 6px;
   font-size: clamp(2rem, 4vw, 3rem);
   letter-spacing: 0.2px;
+
+  /* GREEN HEADING */
+  color: var(--accent);
+  text-shadow: 0 0 14px rgba(34,197,94,0.18);
 }
 
 .subtitle{
@@ -75,7 +78,18 @@ p{ margin: 10px 0; color: rgba(231,231,231,0.82); }
   font-size: 1.05rem;
 }
 
-/* ====== Header link row ====== */
+/* ====== Links ====== */
+a{
+  color: var(--link);
+  text-decoration: none;
+  font-weight: 650;
+}
+
+a:hover{
+  text-decoration: underline;
+  text-decoration-color: rgba(96,165,250,0.65);
+}
+
 .links{
   margin-top: 14px;
   display: flex;
@@ -85,31 +99,17 @@ p{ margin: 10px 0; color: rgba(231,231,231,0.82); }
   color: rgba(231,231,231,0.75);
 }
 
-.links a{
-  color: var(--accent);
-  text-decoration: none;
-  font-weight: 700;
-  position: relative;
-  transition: opacity 160ms ease, text-decoration-color 160ms ease;
-}
-
-.links a:hover{
-  opacity: 0.92;
-  text-decoration: underline;
-  text-decoration-color: rgba(96,165,250,0.65);
-}
-
 .dot{ opacity: 0.55; }
 
-/* Better focus outlines (keyboard nav) */
+/* Focus outline */
 a:focus-visible,
 button:focus-visible{
-  outline: 2px solid rgba(96,165,250,0.80);
+  outline: 2px solid rgba(96,165,250,0.85);
   outline-offset: 3px;
   border-radius: 10px;
 }
 
-/* ====== Profile block ====== */
+/* ====== Profile block (if you add it later) ====== */
 .profile{
   margin-top: 18px;
   display: grid;
@@ -154,8 +154,8 @@ button:focus-visible{
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: rgba(96,165,250,0.95);
-  box-shadow: 0 0 18px rgba(96,165,250,0.35);
+  background: var(--accent);
+  box-shadow: 0 0 18px rgba(34,197,94,0.25);
 }
 
 /* ====== Main content ====== */
@@ -169,25 +169,25 @@ section{
   border-radius: var(--radius);
   border: 1px solid var(--border);
 
-  /* Opaque-ish surface so background glow doesn't band through */
+  /* Opaque surface so background never bands through */
   background: linear-gradient(rgba(7,10,15,0.94), rgba(7,10,15,0.94));
-
   box-shadow: var(--shadow);
-  transition: border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
+
+  transition: border-color 180ms ease, box-shadow 180ms ease;
 }
 
-/* Subtle hover (NO bouncing pop-out) */
 section:hover{
   border-color: var(--borderStrong);
-  background: linear-gradient(rgba(10,14,22,0.96), rgba(10,14,22,0.96));
   box-shadow: var(--shadowStrong);
 }
 
+/* GREEN section headings */
 h2{
   margin: 0 0 10px;
   font-size: 1.25rem;
   letter-spacing: 0.2px;
-  color: rgba(231,231,231,0.95);
+  color: var(--accent);
+  text-shadow: 0 0 12px rgba(34,197,94,0.14);
 }
 
 /* Lists */
@@ -217,6 +217,8 @@ li{ margin: 6px 0; }
 .role h3{
   margin: 0 0 4px;
   font-size: 1.05rem;
+
+  /* GREEN job titles */
   color: var(--accent);
 }
 
@@ -245,17 +247,4 @@ li{ margin: 6px 0; }
 @media (prefers-reduced-motion: reduce){
   *{ transition: none !important; }
   html{ scroll-behavior: auto; }
-
-  /* ====== FORCE-KILL ANY OLD GREEN BACKGROUND ====== */
-html, body{
-  background: #070a0f !important;
 }
-
-body{
-  background:
-    radial-gradient(1200px 600px at 20% 0%, rgba(96,165,250,0.10), transparent 55%),
-    radial-gradient(900px 500px at 90% 10%, rgba(94,234,212,0.08), transparent 50%),
-    #070a0f !important;
-}
-
-
