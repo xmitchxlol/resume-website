@@ -158,10 +158,15 @@ section{
   padding: 18px;
   border-radius: var(--radius);
   border: 1px solid var(--border);
-  background: var(--card);
+  background:
+    linear-gradient(
+      rgba(7,10,15,0.92),
+      rgba(7,10,15,0.92)
+    );
   box-shadow: var(--shadow);
-  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
+
 
 section:hover{
   transform: translateY(-2px);
