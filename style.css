@@ -1,18 +1,28 @@
 /* ====== Base / Reset ====== */
 :root{
   --bg: #070a0f;
+
   --text: #e7e7e7;
   --muted: rgba(231,231,231,0.78);
 
+  /* Accent (NO GREEN) */
+  --accent: #60a5fa;                 /* soft blue */
+  --accent2: #5eead4;                /* soft teal */
+  --accentSoft: rgba(96,165,250,0.12);
+
+  /* Surfaces */
   --card: rgba(255,255,255,0.02);
-  --card2: rgba(0,0,0,0.18);
+  --card2: rgba(0,0,0,0.22);
 
+  /* Borders */
   --border: rgba(255,255,255,0.08);
-  --borderStrong: rgba(0,255,140,0.18);
+  --borderStrong: rgba(96,165,250,0.22);
 
+  /* Shadows */
   --shadow: 0 12px 30px rgba(0,0,0,0.25);
   --shadowStrong: 0 18px 45px rgba(0,0,0,0.45);
 
+  /* Radius */
   --radius: 16px;
   --radius2: 14px;
 }
@@ -28,9 +38,11 @@ body{
   color: var(--text);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+
+  /* Background (NO GREEN) */
   background:
-    radial-gradient(1200px 600px at 20% 0%, rgba(0,255,140,0.10), transparent 55%),
-    radial-gradient(900px 500px at 90% 10%, rgba(0,160,255,0.10), transparent 50%),
+    radial-gradient(1200px 600px at 20% 0%, rgba(96,165,250,0.10), transparent 55%),
+    radial-gradient(900px 500px at 90% 10%, rgba(94,234,212,0.08), transparent 50%),
     var(--bg);
 }
 
@@ -48,7 +60,7 @@ p{ margin: 10px 0; color: rgba(231,231,231,0.82); }
   position: relative;
   padding: 56px 0 28px;
   border-bottom: 1px solid var(--border);
-  background: linear-gradient(180deg, rgba(0,255,140,0.06), transparent);
+  background: linear-gradient(180deg, rgba(96,165,250,0.08), transparent);
 }
 
 .site-header h1{
@@ -78,13 +90,13 @@ p{ margin: 10px 0; color: rgba(231,231,231,0.82); }
   text-decoration: none;
   font-weight: 700;
   position: relative;
-  transition: transform 160ms ease, opacity 160ms ease, text-decoration-color 160ms ease;
+  transition: opacity 160ms ease, text-decoration-color 160ms ease;
 }
 
 .links a:hover{
-  transform: translateY(-1px);
+  opacity: 0.92;
   text-decoration: underline;
-  text-decoration-color: rgba(0,255,140,0.6);
+  text-decoration-color: rgba(96,165,250,0.65);
 }
 
 .dot{ opacity: 0.55; }
@@ -92,7 +104,7 @@ p{ margin: 10px 0; color: rgba(231,231,231,0.82); }
 /* Better focus outlines (keyboard nav) */
 a:focus-visible,
 button:focus-visible{
-  outline: 2px solid rgba(0,255,140,0.75);
+  outline: 2px solid rgba(96,165,250,0.80);
   outline-offset: 3px;
   border-radius: 10px;
 }
@@ -111,8 +123,10 @@ button:focus-visible{
   height: 92px;
   border-radius: 999px;
   object-fit: cover;
-  border: 1px solid rgba(0,255,140,0.45);
-  box-shadow: 0 0 0 6px rgba(0,255,140,0.06), 0 10px 30px rgba(0,0,0,0.45);
+  border: 1px solid rgba(96,165,250,0.45);
+  box-shadow:
+    0 0 0 6px rgba(96,165,250,0.06),
+    0 10px 30px rgba(0,0,0,0.45);
 }
 
 .badges{
@@ -140,8 +154,8 @@ button:focus-visible{
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: rgba(0,255,140,0.9);
-  box-shadow: 0 0 18px rgba(0,255,140,0.35);
+  background: rgba(96,165,250,0.95);
+  box-shadow: 0 0 18px rgba(96,165,250,0.35);
 }
 
 /* ====== Main content ====== */
@@ -154,20 +168,18 @@ section{
   padding: 18px;
   border-radius: var(--radius);
   border: 1px solid var(--border);
-  background:
-    linear-gradient(
-      rgba(7,10,15,0.92),
-      rgba(7,10,15,0.92)
-    );
+
+  /* Opaque-ish surface so background glow doesn't band through */
+  background: linear-gradient(rgba(7,10,15,0.94), rgba(7,10,15,0.94));
+
   box-shadow: var(--shadow);
-  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+  transition: border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
 }
 
-
+/* Subtle hover (NO bouncing pop-out) */
 section:hover{
-  transform: translateY(-2px);
   border-color: var(--borderStrong);
-  background: rgba(255,255,255,0.03);
+  background: linear-gradient(rgba(10,14,22,0.96), rgba(10,14,22,0.96));
   box-shadow: var(--shadowStrong);
 }
 
@@ -195,12 +207,11 @@ li{ margin: 6px 0; }
   border: 1px solid var(--border);
   background: var(--card2);
   box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-  transition: transform 180ms ease, border-color 180ms ease;
+  transition: border-color 180ms ease;
 }
 
 .role:hover{
-  transform: translateY(-1px);
-  border-color: rgba(0,255,140,0.16);
+  border-color: rgba(96,165,250,0.22);
 }
 
 .role h3{
