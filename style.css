@@ -104,12 +104,12 @@ button:focus-visible{
 .header-flex{
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 32px;
+  justify-content: flex-start;
+  gap: 18px;
 }
 
 .header-text{
-  max-width: 720px;
+  max-width: 620px;
 }
 
 .eyebrow{
