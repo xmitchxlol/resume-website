@@ -1,247 +1,147 @@
-/* ====== Base / Reset ====== */
-:root{
-  --bg: #070a0f;
-  --text: #e7e7e7;
-  --muted: rgba(231,231,231,0.78);
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  /* Accents */
-  --accent: #22c55e;                 /* intentional green */
-  --accentGlow: rgba(34,197,94,0.18);
-  --link: #60a5fa;                   /* links are blue for contrast */
+  <title>Mitchell Trias | Cyber Operations Student</title>
 
-  /* Surfaces */
-  --card: rgba(255,255,255,0.02);
-  --card2: rgba(0,0,0,0.22);
+  <meta
+    name="description"
+    content="Mitchell Trias is a Cyber Operations student at Dakota State University and a U.S. Army Reserve Signal Support Specialist with experience in Linux, networking, and cybersecurity labs."
+  />
 
-  /* Borders / Shadows */
-  --border: rgba(255,255,255,0.08);
-  --borderStrong: rgba(96,165,250,0.22);
-  --shadow: 0 12px 30px rgba(0,0,0,0.25);
-  --shadowStrong: 0 18px 45px rgba(0,0,0,0.45);
+  <link rel="stylesheet" href="style.css?v=11" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
+</head>
 
-  --radius: 16px;
-  --radius2: 14px;
-}
+<body>
+  <header class="site-header">
+    <div class="container header-flex">
+      <div class="header-text">
+        <p class="eyebrow">Portfolio</p>
+        <h1>Mitchell Trias</h1>
+        <p class="subtitle">U.S. Army Reserve Soldier | Cyber Operations Student</p>
 
-*{ box-sizing: border-box; }
-html, body{ height: 100%; }
-html{ scroll-behavior: smooth; background: var(--bg); }
+        <div class="links">
+          <a href="mailto:mitchell.trias7@gmail.com">mitchell.trias7@gmail.com</a>
+          <span class="dot">•</span>
+          <a href="https://github.com/xmitchxlol" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <span class="dot">•</span>
+          <a href="https://www.linkedin.com/in/mitchelltrias" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
 
-body{
-  margin: 0;
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-  line-height: 1.6;
-  color: var(--text);
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+      <img src="mitchell2.jpg" alt="Portrait of Mitchell Trias" class="header-photo" />
+    </div>
+  </header>
 
-  /* Background: NO GREEN WASH */
-  background:
-    radial-gradient(1200px 600px at 20% 0%, rgba(96,165,250,0.10), transparent 55%),
-    radial-gradient(900px 500px at 90% 10%, rgba(148,163,184,0.06), transparent 50%),
-    var(--bg);
-}
+  <main class="container">
+    <section>
+      <h2>Professional Summary</h2>
+      <p>
+        I am a Cyber Operations student at Dakota State University and a U.S. Army Reserve
+        Signal Support Specialist with a strong interest in cybersecurity, networking, and defensive security operations.
+      </p>
+      <p>
+        My experience includes hands-on work with Linux, virtual machines, networking fundamentals,
+        and lab-based security environments. I am focused on building a strong technical foundation
+        while continuing to develop discipline, adaptability, and leadership through military service.
+      </p>
+      <p>
+        My long-term goal is to contribute to cybersecurity efforts in the federal, defense,
+        or national security space.
+      </p>
+    </section>
 
-img{ max-width: 100%; display: block; }
-p{ margin: 10px 0; color: rgba(231,231,231,0.82); }
+    <section>
+      <h2>Technical Skills</h2>
+      <ul>
+        <li>Linux administration fundamentals: Ubuntu, Kali, terminal usage, packages, permissions, and services</li>
+        <li>Windows systems: basic administration, troubleshooting, and end-user support</li>
+        <li>Networking fundamentals: TCP/IP, DNS, DHCP, subnetting, routing, and switching concepts</li>
+        <li>Virtualization: Windows and Linux virtual machines using VirtualBox and VMware</li>
+        <li>Cybersecurity labs: network defense, ethical hacking fundamentals, and legal lab-based security practice</li>
+      </ul>
+    </section>
 
-/* ====== Layout ====== */
-.container{
-  width: min(980px, 92%);
-  margin: 0 auto;
-}
+    <section>
+      <h2>Professional Experience</h2>
 
-/* ====== Header ====== */
-.site-header{
-  padding: 56px 0 28px;
-  border-bottom: 1px solid var(--border);
-  background: linear-gradient(180deg, rgba(96,165,250,0.08), transparent);
-}
+      <div class="role">
+        <h3>25U Signal Support Specialist | U.S. Army Reserve</h3>
+        <p class="meta">Feb 2024 – Present • Sioux Falls, South Dakota</p>
+        <ul>
+          <li>Operate, maintain, and troubleshoot communications systems in support of mission requirements.</li>
+          <li>Assist with the setup and management of networking equipment, including routers, switches, and wireless systems.</li>
+          <li>Apply security standards and operational discipline when handling sensitive communications and information.</li>
+          <li>Strengthen teamwork, accountability, and problem-solving skills in mission-focused environments.</li>
+        </ul>
+      </div>
 
-/* Header layout: photo close to name on desktop */
-.header-flex{
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 28px;
-}
+      <div class="role">
+        <h3>Employee | Country Corner</h3>
+        <p class="meta">Feb 2021 – Jan 2026 • Estelline, South Dakota</p>
+        <ul>
+          <li>Provided dependable customer service in a fast-paced retail environment.</li>
+          <li>Handled transactions accurately while supporting day-to-day store operations.</li>
+          <li>Maintained a clean, organized, and customer-ready workspace.</li>
+        </ul>
+      </div>
 
-.header-text{
-  max-width: 720px;
-}
+      <div class="role">
+        <h3>Cashier | Hy-Vee, Inc.</h3>
+        <p class="meta">Mar 2023 – Mar 2024 • Brookings, South Dakota</p>
+        <ul>
+          <li>Delivered professional customer service in a high-volume checkout environment.</li>
+          <li>Processed transactions efficiently while maintaining accuracy and attention to detail.</li>
+          <li>Worked with team members to support smooth front-end operations.</li>
+        </ul>
+      </div>
+    </section>
 
-/* Name */
-.site-header h1{
-  margin: 0 0 6px;
-  font-size: clamp(2.4rem, 4.5vw, 3.2rem);
-  letter-spacing: 0.3px;
+    <section>
+      <h2>Education</h2>
 
-  /* Green but clean */
-  color: var(--accent);
-  text-shadow: 0 0 16px var(--accentGlow);
-}
+      <div class="role">
+        <h3>Dakota State University</h3>
+        <p class="meta">B.S. in Cyber Operations • 2026 – 2030</p>
+        <p>
+          Coursework and training focused on cybersecurity, networking, operating systems,
+          and cyber defense principles.
+        </p>
+      </div>
 
-.subtitle{
-  margin: 0;
-  color: var(--muted);
-  font-size: 1.05rem;
-}
+      <div class="role">
+        <h3>Estelline Public School</h3>
+        <p class="meta">High School Diploma • 2021 – 2025</p>
+      </div>
+    </section>
 
-/* Links row */
-.links{
-  margin-top: 14px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  align-items: center;
-  color: rgba(231,231,231,0.75);
-}
+    <section>
+      <h2>Certifications &amp; Technical Projects</h2>
+      <ul>
+        <li><strong>CompTIA Network+</strong> — Completed Apr 14, 2026</li>
+        <li><strong>CompTIA Security+</strong> — Planned</li>
+        <li><strong>CyberPatriot</strong> — Experience with network defense and Windows Server lab environments</li>
+        <li><strong>Home Lab</strong> — Built and maintained Windows and Linux virtual machines for networking and cybersecurity practice</li>
+      </ul>
+    </section>
 
-.dot{ opacity: 0.55; }
+    <section>
+      <h2>Contact</h2>
+      <p>
+        Email: <a href="mailto:mitchell.trias7@gmail.com">mitchell.trias7@gmail.com</a><br />
+        GitHub: <a href="https://github.com/xmitchxlol" target="_blank" rel="noopener noreferrer">xmitchxlol</a><br />
+        LinkedIn: <a href="https://www.linkedin.com/in/mitchelltrias" target="_blank" rel="noopener noreferrer">mitchelltrias</a>
+      </p>
+    </section>
+  </main>
 
-a{
-  color: var(--link);
-  text-decoration: none;
-  font-weight: 650;
-}
-
-a:hover{
-  text-decoration: underline;
-  text-decoration-color: rgba(96,165,250,0.65);
-}
-
-/* Focus outlines */
-a:focus-visible,
-button:focus-visible{
-  outline: 2px solid rgba(96,165,250,0.85);
-  outline-offset: 3px;
-  border-radius: 10px;
-}
-
-/* Header photo */
-.header-photo{
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid var(--accent);
-  box-shadow: 0 0 0 5px rgba(34,197,94,0.16);
-  flex: 0 0 auto;
-}
-
-/* ====== Main content ====== */
-main{
-  padding: 28px 0 60px;
-}
-
-section{
-  margin: 18px 0;
-  padding: 18px;
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-
-  /* Opaque surface so background never bands through */
-  background: linear-gradient(rgba(7,10,15,0.94), rgba(7,10,15,0.94));
-
-  box-shadow: var(--shadow);
-  transition: border-color 180ms ease, box-shadow 180ms ease;
-}
-
-section:hover{
-  border-color: var(--borderStrong);
-  box-shadow: var(--shadowStrong);
-}
-
-/* Titles */
-h2{
-  margin: 0 0 10px;
-  font-size: 1.25rem;
-  letter-spacing: 0.2px;
-
-  color: var(--accent);
-  text-shadow: 0 0 12px rgba(34,197,94,0.14);
-
-  position: relative;
-  padding-left: 14px;
-}
-
-h2::before{
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.2em;
-  width: 4px;
-  height: 1.2em;
-  background: var(--accent);
-  border-radius: 2px;
-  box-shadow: 0 0 10px rgba(34,197,94,0.35);
-}
-
-/* Lists */
-ul{
-  margin: 10px 0 0 18px;
-  padding: 0;
-  color: rgba(231,231,231,0.82);
-}
-
-li{ margin: 6px 0; }
-
-/* ====== Experience blocks ====== */
-.role{
-  margin-top: 14px;
-  padding: 14px;
-  border-radius: var(--radius2);
-  border: 1px solid var(--border);
-  background: var(--card2);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-  transition: border-color 180ms ease;
-}
-
-.role:hover{
-  border-color: rgba(96,165,250,0.22);
-}
-
-.role h3{
-  margin: 0 0 4px;
-  font-size: 1.05rem;
-  color: var(--accent);
-}
-
-.meta{
-  margin: 0 0 10px;
-  font-size: 0.95rem;
-  color: rgba(231,231,231,0.68);
-}
-
-/* ====== Footer ====== */
-.site-footer{
-  border-top: 1px solid var(--border);
-  padding: 18px 0;
-  color: rgba(231,231,231,0.55);
-  text-align: center;
-}
-
-/* ====== Mobile ====== */
-@media (max-width: 700px){
-  .header-flex{
-    flex-direction: column-reverse; /* photo above text */
-    align-items: center;
-    text-align: center;
-    gap: 14px;
-  }
-
-  .header-photo{
-    width: 92px;
-    height: 92px;
-  }
-}
-
-@media (max-width: 520px){
-  section{ padding: 14px; }
-}
-
-/* ====== Reduced Motion ====== */
-@media (prefers-reduced-motion: reduce){
-  *{ transition: none !important; }
-  html{ scroll-behavior: auto; }
-}
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Mitchell Trias</p>
+    </div>
+  </footer>
+</body>
+</html>
