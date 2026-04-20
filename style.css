@@ -1,147 +1,305 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+/* ====== Base / Reset ====== */
+:root{
+  --bg: #070a0f;
+  --bg-soft: #0d1320;
+  --text: #e7e7e7;
+  --muted: rgba(231,231,231,0.76);
 
-  <title>Mitchell Trias | Cyber Operations Student</title>
+  --accent: #22c55e;
+  --accentGlow: rgba(34,197,94,0.18);
+  --link: #7ab8ff;
 
-  <meta
-    name="description"
-    content="Mitchell Trias is a Cyber Operations student at Dakota State University and a U.S. Army Reserve Signal Support Specialist with experience in Linux, networking, and cybersecurity labs."
-  />
+  --card: rgba(255,255,255,0.03);
+  --card2: rgba(255,255,255,0.02);
 
-  <link rel="stylesheet" href="style.css?v=11" />
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
-</head>
+  --border: rgba(255,255,255,0.08);
+  --borderStrong: rgba(122,184,255,0.24);
 
-<body>
-  <header class="site-header">
-    <div class="container header-flex">
-      <div class="header-text">
-        <p class="eyebrow">Portfolio</p>
-        <h1>Mitchell Trias</h1>
-        <p class="subtitle">U.S. Army Reserve Soldier | Cyber Operations Student</p>
+  --shadow: 0 14px 36px rgba(0,0,0,0.28);
+  --shadowStrong: 0 18px 50px rgba(0,0,0,0.4);
 
-        <div class="links">
-          <a href="mailto:mitchell.trias7@gmail.com">mitchell.trias7@gmail.com</a>
-          <span class="dot">•</span>
-          <a href="https://github.com/xmitchxlol" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <span class="dot">•</span>
-          <a href="https://www.linkedin.com/in/mitchelltrias" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        </div>
-      </div>
+  --radius: 18px;
+  --radiusSmall: 14px;
+  --maxWidth: 980px;
+}
 
-      <img src="mitchell2.jpg" alt="Portrait of Mitchell Trias" class="header-photo" />
-    </div>
-  </header>
+*{
+  box-sizing: border-box;
+}
 
-  <main class="container">
-    <section>
-      <h2>Professional Summary</h2>
-      <p>
-        I am a Cyber Operations student at Dakota State University and a U.S. Army Reserve
-        Signal Support Specialist with a strong interest in cybersecurity, networking, and defensive security operations.
-      </p>
-      <p>
-        My experience includes hands-on work with Linux, virtual machines, networking fundamentals,
-        and lab-based security environments. I am focused on building a strong technical foundation
-        while continuing to develop discipline, adaptability, and leadership through military service.
-      </p>
-      <p>
-        My long-term goal is to contribute to cybersecurity efforts in the federal, defense,
-        or national security space.
-      </p>
-    </section>
+html, body{
+  height: 100%;
+}
 
-    <section>
-      <h2>Technical Skills</h2>
-      <ul>
-        <li>Linux administration fundamentals: Ubuntu, Kali, terminal usage, packages, permissions, and services</li>
-        <li>Windows systems: basic administration, troubleshooting, and end-user support</li>
-        <li>Networking fundamentals: TCP/IP, DNS, DHCP, subnetting, routing, and switching concepts</li>
-        <li>Virtualization: Windows and Linux virtual machines using VirtualBox and VMware</li>
-        <li>Cybersecurity labs: network defense, ethical hacking fundamentals, and legal lab-based security practice</li>
-      </ul>
-    </section>
+html{
+  scroll-behavior: smooth;
+  background: var(--bg);
+}
 
-    <section>
-      <h2>Professional Experience</h2>
+body{
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.65;
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  background:
+    radial-gradient(1000px 520px at 15% 0%, rgba(96,165,250,0.10), transparent 55%),
+    radial-gradient(900px 450px at 90% 8%, rgba(148,163,184,0.06), transparent 50%),
+    linear-gradient(180deg, #070a0f 0%, #0a1019 100%);
+}
 
-      <div class="role">
-        <h3>25U Signal Support Specialist | U.S. Army Reserve</h3>
-        <p class="meta">Feb 2024 – Present • Sioux Falls, South Dakota</p>
-        <ul>
-          <li>Operate, maintain, and troubleshoot communications systems in support of mission requirements.</li>
-          <li>Assist with the setup and management of networking equipment, including routers, switches, and wireless systems.</li>
-          <li>Apply security standards and operational discipline when handling sensitive communications and information.</li>
-          <li>Strengthen teamwork, accountability, and problem-solving skills in mission-focused environments.</li>
-        </ul>
-      </div>
+img{
+  display: block;
+  max-width: 100%;
+}
 
-      <div class="role">
-        <h3>Employee | Country Corner</h3>
-        <p class="meta">Feb 2021 – Jan 2026 • Estelline, South Dakota</p>
-        <ul>
-          <li>Provided dependable customer service in a fast-paced retail environment.</li>
-          <li>Handled transactions accurately while supporting day-to-day store operations.</li>
-          <li>Maintained a clean, organized, and customer-ready workspace.</li>
-        </ul>
-      </div>
+p{
+  margin: 0 0 14px;
+  color: rgba(231,231,231,0.84);
+}
 
-      <div class="role">
-        <h3>Cashier | Hy-Vee, Inc.</h3>
-        <p class="meta">Mar 2023 – Mar 2024 • Brookings, South Dakota</p>
-        <ul>
-          <li>Delivered professional customer service in a high-volume checkout environment.</li>
-          <li>Processed transactions efficiently while maintaining accuracy and attention to detail.</li>
-          <li>Worked with team members to support smooth front-end operations.</li>
-        </ul>
-      </div>
-    </section>
+ul{
+  margin: 0;
+  padding-left: 20px;
+  color: rgba(231,231,231,0.84);
+}
 
-    <section>
-      <h2>Education</h2>
+li{
+  margin: 8px 0;
+}
 
-      <div class="role">
-        <h3>Dakota State University</h3>
-        <p class="meta">B.S. in Cyber Operations • 2026 – 2030</p>
-        <p>
-          Coursework and training focused on cybersecurity, networking, operating systems,
-          and cyber defense principles.
-        </p>
-      </div>
+a{
+  color: var(--link);
+  text-decoration: none;
+  font-weight: 600;
+}
 
-      <div class="role">
-        <h3>Estelline Public School</h3>
-        <p class="meta">High School Diploma • 2021 – 2025</p>
-      </div>
-    </section>
+a:hover{
+  text-decoration: underline;
+  text-decoration-color: rgba(122,184,255,0.7);
+  text-underline-offset: 3px;
+}
 
-    <section>
-      <h2>Certifications &amp; Technical Projects</h2>
-      <ul>
-        <li><strong>CompTIA Network+</strong> — Completed Apr 14, 2026</li>
-        <li><strong>CompTIA Security+</strong> — Planned</li>
-        <li><strong>CyberPatriot</strong> — Experience with network defense and Windows Server lab environments</li>
-        <li><strong>Home Lab</strong> — Built and maintained Windows and Linux virtual machines for networking and cybersecurity practice</li>
-      </ul>
-    </section>
+a:focus-visible,
+button:focus-visible{
+  outline: 2px solid rgba(122,184,255,0.9);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
 
-    <section>
-      <h2>Contact</h2>
-      <p>
-        Email: <a href="mailto:mitchell.trias7@gmail.com">mitchell.trias7@gmail.com</a><br />
-        GitHub: <a href="https://github.com/xmitchxlol" target="_blank" rel="noopener noreferrer">xmitchxlol</a><br />
-        LinkedIn: <a href="https://www.linkedin.com/in/mitchelltrias" target="_blank" rel="noopener noreferrer">mitchelltrias</a>
-      </p>
-    </section>
-  </main>
+/* ====== Layout ====== */
+.container{
+  width: min(var(--maxWidth), 92%);
+  margin: 0 auto;
+}
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2026 Mitchell Trias</p>
-    </div>
-  </footer>
-</body>
-</html>
+/* ====== Header ====== */
+.site-header{
+  padding: 58px 0 30px;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(96,165,250,0.08), transparent);
+}
+
+.header-flex{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.header-text{
+  max-width: 720px;
+}
+
+.eyebrow{
+  margin: 0 0 10px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(231,231,231,0.56);
+}
+
+.site-header h1{
+  margin: 0 0 8px;
+  font-size: clamp(2.5rem, 4.8vw, 3.4rem);
+  line-height: 1.05;
+  letter-spacing: 0.3px;
+  color: var(--accent);
+  text-shadow: 0 0 18px var(--accentGlow);
+}
+
+.subtitle{
+  margin: 0;
+  font-size: 1.08rem;
+  color: var(--muted);
+}
+
+.links{
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  color: rgba(231,231,231,0.7);
+}
+
+.dot{
+  opacity: 0.5;
+}
+
+.header-photo{
+  width: 118px;
+  height: 118px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--accent);
+  box-shadow:
+    0 0 0 6px rgba(34,197,94,0.14),
+    0 10px 30px rgba(0,0,0,0.3);
+  flex: 0 0 auto;
+}
+
+/* ====== Main ====== */
+main{
+  padding: 28px 0 56px;
+}
+
+section{
+  margin: 16px 0;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, rgba(10,16,25,0.94), rgba(8,12,18,0.96));
+  box-shadow: var(--shadow);
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+section:hover{
+  border-color: var(--borderStrong);
+  box-shadow: var(--shadowStrong);
+  transform: translateY(-1px);
+}
+
+h2{
+  margin: 0 0 14px;
+  padding-left: 14px;
+  position: relative;
+  font-size: 1.22rem;
+  letter-spacing: 0.2px;
+  color: var(--accent);
+  text-shadow: 0 0 12px rgba(34,197,94,0.14);
+}
+
+h2::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.2em;
+  width: 4px;
+  height: 1.15em;
+  border-radius: 2px;
+  background: var(--accent);
+  box-shadow: 0 0 12px rgba(34,197,94,0.35);
+}
+
+.role{
+  margin-top: 14px;
+  padding: 14px 14px 12px;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--radiusSmall);
+  background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.015));
+  box-shadow: 0 10px 24px rgba(0,0,0,0.22);
+  transition: border-color 180ms ease, transform 180ms ease;
+}
+
+.role:hover{
+  border-color: rgba(122,184,255,0.24);
+  transform: translateY(-1px);
+}
+
+.role h3{
+  margin: 0 0 5px;
+  font-size: 1.04rem;
+  line-height: 1.35;
+  color: #f2f7ff;
+}
+
+.meta{
+  margin: 0 0 10px;
+  font-size: 0.94rem;
+  color: rgba(231,231,231,0.64);
+}
+
+/* ====== Footer ====== */
+.site-footer{
+  padding: 18px 0 26px;
+  border-top: 1px solid var(--border);
+  color: rgba(231,231,231,0.52);
+  text-align: center;
+}
+
+/* ====== Mobile ====== */
+@media (max-width: 700px){
+  .site-header{
+    padding: 42px 0 24px;
+  }
+
+  .header-flex{
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .header-text{
+    max-width: 100%;
+  }
+
+  .links{
+    justify-content: center;
+  }
+
+  .header-photo{
+    width: 96px;
+    height: 96px;
+  }
+
+  main{
+    padding: 22px 0 46px;
+  }
+
+  section{
+    padding: 16px;
+  }
+}
+
+@media (max-width: 520px){
+  .container{
+    width: 94%;
+  }
+
+  .site-header h1{
+    font-size: 2.2rem;
+  }
+
+  .subtitle{
+    font-size: 1rem;
+  }
+
+  h2{
+    font-size: 1.12rem;
+  }
+}
+
+/* ====== Reduced Motion ====== */
+@media (prefers-reduced-motion: reduce){
+  *{
+    transition: none !important;
+  }
+
+  html{
+    scroll-behavior: auto;
+  }
+}
